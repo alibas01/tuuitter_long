@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @tuuit.id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @tuuit.user_id %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @tuuit.time %>
+</p>
+
+<p>
+  <strong>Tuuit:</strong>
+  <%= @tuuit.tuuit %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @tuuit.title %>
+</p>
+
+<%= link_to 'Edit', edit_tuuit_path(@tuuit) %> |
+<%= link_to 'Back', tuuits_path %>

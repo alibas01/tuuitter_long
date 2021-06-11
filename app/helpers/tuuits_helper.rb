@@ -1,0 +1,2 @@
+module TuuitsHelper
+end
