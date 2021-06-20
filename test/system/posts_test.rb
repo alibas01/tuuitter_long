@@ -18,7 +18,6 @@ class PostsTest < ApplicationSystemTestCase
     fill_in "Postid", with: @post.postid
     fill_in "Tags", with: @post.tags
     fill_in "Title", with: @post.title
-    fill_in "User", with: @post.user_id
     click_on "Create Post"
 
     assert_text "Post was successfully created"
@@ -33,7 +32,6 @@ class PostsTest < ApplicationSystemTestCase
     fill_in "Postid", with: @post.postid
     fill_in "Tags", with: @post.tags
     fill_in "Title", with: @post.title
-    fill_in "User", with: @post.user_id
     click_on "Update Post"
 
     assert_text "Post was successfully updated"

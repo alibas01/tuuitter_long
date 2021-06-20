@@ -5,11 +5,9 @@ one:
   title: MyString
   post: MyText
   tags: MyString
-  user_id: 1
 
 two:
   postid: 1
   title: MyString
   post: MyText
   tags: MyString
-  user_id: 1
