@@ -1,19 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<div class="jumbotron">
+  <h1 class="display-4">Hello, <%= @user.name %> !</h1>
+  <p class="lead"><%= @user.email %></p>
+  <hr class="my-4">
+  <p>Total Posts: 42</p>
+  <p>Average Length: 342</p>
+  <br/>
+  <p class="lead">
+    <%= link_to 'Edit', edit_user_path(@user), class:"btn btn-dark" %> |
+    <%= link_to 'Back', users_path, class:"btn btn-dark" %>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+  </p>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
