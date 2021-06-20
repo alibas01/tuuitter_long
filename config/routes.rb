@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :homes
+  resources :posts
   resources :users
-  #get 'home/index'
+  get 'home/index'
   root 'home#index'
   get 'home/about'
   get '/login' => 'sessions#new'
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   get '/register' => 'users#new'
   post '/users' => 'users#create'
-  get '/write' => 'homes#new'
-  post '/write' => 'homes#create'
+  get '/write' => 'posts#new'
+  post '/write' => 'posts#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

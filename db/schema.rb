@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_20_013648) do
+ActiveRecord::Schema.define(version: 2021_06_20_155811) do
 
-  create_table "homes", force: :cascade do |t|
-    t.text "post"
+  create_table "posts", force: :cascade do |t|
+    t.integer "postid"
     t.string "title"
-    t.integer "post_id"
+    t.text "post"
     t.string "tags"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
