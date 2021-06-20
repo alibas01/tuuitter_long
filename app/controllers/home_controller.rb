@@ -5,6 +5,8 @@ class HomeController < ApplicationController
   def about
   end 
   
-  def write
+  def new
+  end  
+  def create
   end  
 end
