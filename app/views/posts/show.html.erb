@@ -1,11 +1,12 @@
 
 <div class="jumbotron">
   <h1 class="display-4"><%= @post.title %> </h1>
-  <p class="lead"><%= current_user.email %></p>
+  </br>
+  <p class="lead">by <%= current_user.email %></p>
   <p class="lead">Member since <%= current_user.created_at.strftime("%B %d %Y") %></p>
   <p class="lead">Tags: <%= @post.tags %></p>
   <hr class="my-4">
-  <p> <%= @post.post %></p>
+  <p class="lead"> <%= @post.post %></p>
   <br/>
   <p class="lead">
     <%= link_to 'Edit', edit_post_path(@post), class:"btn btn-dark" %> |
