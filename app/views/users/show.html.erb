@@ -1,8 +1,9 @@
 
 
 <div class="jumbotron">
-  <h1 class="display-4">Hello, <%= @user.name %> !</h1>
+  <h1 class="display-4"><u>User</u>:  <%= @user.name %> </h1>
   <p class="lead"><%= @user.email %></p>
+  <p class="lead">Member since <%= @user.created_at.strftime("%B %d %Y") %></p>
   <hr class="my-4">
   <p>Total Posts: 42</p>
   <p>Average Length: 342</p>
