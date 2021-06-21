@@ -26,6 +26,10 @@
       <% form.label :tags %>
       <%= form.text_field :tags, class:"form-control", placeholder: "Tags, seperated by comas" %>
     </div>
+      <% if current_user %>
+          User ID:<%= current_user.id %>
+          <%= form.hidden_field :user_id, value: current_user.id%>
+      <% end %>
     <br/>
     <div class="actions">
       <%= form.submit class: "btn btn-dark" %>
