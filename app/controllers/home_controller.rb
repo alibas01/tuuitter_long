@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def about
+    @users = User.all
   end 
   
   def new
