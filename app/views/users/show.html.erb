@@ -1,5 +1,4 @@
 
-
 <div class="jumbotron">
   <h1 class="display-4"><u>User</u>:  <%= @user.name %> </h1>
   <p class="lead"><%= @user.email %></p>
@@ -9,7 +8,13 @@
   <p>Average Length: 342</p>
   <br/>
   <p class="lead">
-    <%= link_to 'Edit', edit_user_path(@user), class:"btn btn-dark" %> |
+  <% if current_user %>
+    <% if @user.id == current_user.id %>
+      <%= link_to 'Edit', edit_user_path(@user), class:"btn btn-dark" %> |
+    <% else %>
+      <%= link_to 'Edit', edit_user_path(@user), class:"btn btn-secondary disabled" %> |
+    <% end %>
+  <% end %>
     <%= link_to 'Back', users_path, class:"btn btn-dark" %>
 
   </p>
