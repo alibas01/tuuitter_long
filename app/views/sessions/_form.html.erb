@@ -1,0 +1,13 @@
+<%= form_with(:session, url: login_path) do |form| %>
+  <div class="row g-3 align-items-center">​
+    ​<div class=​"field form-group"​>
+    ​​  <%=​ form.text_field ​:email​, ​class: ​​"form-control", placeholder: "Email", type:"email"​ ​%>​
+    ​</div>
+    ​<div class=​"field form-group"​>​
+    ​ <%=​ form.text_field ​:password​, class: ​​"form-control"​, placeholder: "Password", type:"password" ​%>​
+    ​​</div>
+    <div class="actions">
+    ​​  <%=​ form.submit ​"Log in"​, ​class: ​​"btn btn-dark btn-lg"​ ​%>
+    ​​</div>
+  ​​</div>​
+​ <%​ ​end​ ​%>
