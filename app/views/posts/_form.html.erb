@@ -24,7 +24,7 @@
 
     <div class="field form-group">
       <% form.label :tags %>
-      <%= form.text_field :tags, class:"form-control", placeholder: "Tags, seperated by comas" %>
+      <%= form.text_field :tags, class:"form-control", placeholder: "Tags, seperated by comas", maxlength:"100" %>
     </div>
       <% if current_user %>
           
