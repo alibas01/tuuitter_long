@@ -1,0 +1,37 @@
+<header class="page-header">
+  <h1>Dashboard</h1>
+</header>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="4">Counts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Users' Count:
+      </td>
+      <td>
+        <%=  %>
+      </td>
+      <td> 
+        <%= link_to 'All Products', [:admin, :users], class: 'btn btn-success' %>
+      </td>  
+    </tr>
+    <tr>
+      <td>
+        Posts' Count:
+      </td>
+      <td>
+        <%= %>
+      </td>
+      <td> 
+        <%= link_to 'All Categories', [:admin, :posts], class: 'btn btn-success' %>
+      </td>  
+    </tr>
+  </tbody>
+</table>
+
+
