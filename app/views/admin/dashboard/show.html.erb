@@ -14,10 +14,10 @@
         Users' Count:
       </td>
       <td>
-        <%=  %>
+        <%= @user_count  %>
       </td>
       <td> 
-        <%= link_to 'All Products', [:admin, :users], class: 'btn btn-success' %>
+        <%= link_to 'All Users', [:admin, :users], class: 'btn btn-success' %>
       </td>  
     </tr>
     <tr>
@@ -25,10 +25,10 @@
         Posts' Count:
       </td>
       <td>
-        <%= %>
+        <%= @post_count %>
       </td>
       <td> 
-        <%= link_to 'All Categories', [:admin, :posts], class: 'btn btn-success' %>
+        <%= link_to 'All Posts', [:admin, :posts], class: 'btn btn-success' %>
       </td>  
     </tr>
   </tbody>

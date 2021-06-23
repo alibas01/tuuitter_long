@@ -21,17 +21,8 @@
         <td><%= post.tags %></td>
         <td><%= post.user.email %></td>
         <td><%= link_to 'Show', post , class:"btn btn-primary" %></td>
-
-        <% if current_user %>
-          <% if post.user_id == current_user.id %>
-            <td><%= link_to 'Edit', edit_post_path(post), class:"btn btn-warning" %></td>
-            <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
-          <% else %>
-            <td><%= link_to 'Edit', edit_post_path(post), class:"btn btn-secondary disabled" %></td>
-            <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-secondary disabled" %></td>
-          <% end %>
-        <% end %>
-
+        <td><%= link_to 'Edit', edit_post_path(post), class:"btn btn-warning" %></td>
+        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -39,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path, class:"btn btn-dark", style:"margin-bottom: 10em" %>
+<%= link_to 'New Post', new_admin_post_path, class:"btn btn-dark", style:"margin-bottom: 10em" %>

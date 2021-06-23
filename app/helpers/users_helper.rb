@@ -21,4 +21,8 @@ module UsersHelper
     puts avg
     return avg
   end
+
+  def get_new_id()
+    return User.maximum('id')
+  end
 end
