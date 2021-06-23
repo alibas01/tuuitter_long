@@ -4,8 +4,8 @@
   <p class="lead"><%= @user.email %></p>
   <p class="lead">Member since <%= @user.created_at.strftime("%B %d %Y") %></p>
   <hr class="my-4">
-  <p>Total Posts: 42</p>
-  <p>Average Length: 342</p>
+  <p>Total Posts: <%= get_post_count(@user.id) %></p>
+  <p>Average Length of Posts: <%= get_avg_char(@user.id) %> characters.</p>
   <br/>
   <p class="lead">
   <% if current_user %>
@@ -16,6 +16,13 @@
     <% end %>
   <% end %>
     <%= link_to 'Back', users_path, class:"btn btn-dark" %>
+    </br>
+    </br>
+  <% if current_user %>
+    <% if @user.id == current_user.id %>
+      <td><%= link_to 'Delete My Account', @user, method: :delete, data: { confirm: 'All of your tuuits will be deleted. Are you sure?' } , class:"btn btn-danger btn-lg" %></td>
+    <% end %>
+  <% end %>
 
   </p>
 </div>

@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password 
 
-  has_many :posts
+  has_many :posts, dependent: :delete_all
 
   before_validation :strip_whitespace
 
