@@ -1,0 +1,36 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation" class="alert alert-warning alert-dismissible fade show" role="alert">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row g-3 align-items-center">
+    <div class="field form-group">
+      <% form.label :title %>
+      <%= form.text_field :title, class:"form-control", placeholder: "Title" %>
+    </div>
+
+    <div class="field form-group">
+      <% form.label :post %>
+      <%= form.text_area :post, class:"form-control", placeholder: "Please enter the content, limited to 1000 characters", maxlength:"1000", rows:"10" %>
+    </div>
+
+    <div class="field form-group">
+      <% form.label :tags %>
+      <%= form.text_field :tags, class:"form-control", placeholder: "Tags, seperated by comas", maxlength:"100" %>
+    </div>
+          
+    <%= form.hidden_field :user_id, value: 'admin' %>
+    <br/>
+    <div class="actions">
+      <%= form.submit class: "btn btn-dark" %>
+    </div>
+  </div>
+<% end %>

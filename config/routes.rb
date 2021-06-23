@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
+  
+  root to: 'home#index'
+  
   resources :posts
   resources :users
+
+  namespace :admin do
+    root to: 'dashboard#show'
+    resources :users, except: [:edit, :update, :show]
+    resources :posts, except: [:edit, :update, :show]
+  end
+
   get 'home/index'
-  root 'home#index'
   get 'home/about'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
