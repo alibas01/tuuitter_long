@@ -1,6 +1,6 @@
 
 
-<h1>Tuuit Search Results</h1>
+<h1>Tuuits / Users Search Results</h1>
 </br>
 <table class="table table-striped table-bordered table-hover">
   <thead class='thead-dark'>
@@ -37,17 +37,24 @@
   </tbody>
 
 
-  
+  <thead class='thead-dark'>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Member Since</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
 
 
   <tbody>
-    <% @output_users.each do |post| %>
+    <% @output_users.each do |user| %>
       <tr>
-        <td><%= post.name %></td>
-        <td><%= post.email %></td>
-        <td><%= post.created_at %></td>
-        <td><%= link_to 'Show', post , class:"btn btn-outline-primary" %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.created_at.strftime("%B %d %Y") %></td>
+        <td><%= link_to 'Show', user , class:"btn btn-outline-primary" %></td>
 
         
 

@@ -18,14 +18,26 @@ class HomeController < ApplicationController
 
   # POST /home/search
   def search
+    
     if params[:word].blank?  
-      redirect_to(root_path, alert: "Empty search field!") and return  
+      redirect_to(root_path, notice: "Empty search field!") and return  
     else  
       word = params[:word].downcase
       @outputs = Post.all.where("lower(title) LIKE :search OR lower(tags) LIKE :search", search: "%#{word}%").uniq
       #@output_tags = Post.all.where("", "%#{word}%")
       @output_users = User.joins(:posts).where("lower(users.email) LIKE ?", "%#{word}%")
-      puts @output_users.all
+      if @outputs.count < 2
+        post_count = " #{@outputs.count} tuuit "
+      else
+        post_count = " #{@outputs.count} tuuits "
+      end
+      if @output_users.count < 2
+        post_user = "#{@output_users.count} user "
+      else
+        post_user = "#{@output_users.count} users " 
+      end
+      message = " #{post_count}and #{post_user}found. "
+      flash.now[:notice] = message
     end
     puts "search word= " + params[:word]
     puts "search word= " + word
