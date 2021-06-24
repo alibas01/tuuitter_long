@@ -1,6 +1,15 @@
 <h1>TUUITTER-BLOG</h1>
+<%= form_tag search_path do %>
+  <div class=" d-flex justify-content-end">
 
-
+      <div class="field ">
+        <%= text_field_tag :word, "", options = { class: 'form-control me-2', type:'search'} %>
+      </div>
+      <div class="actions">
+        <%= submit_tag "Search", class: "btn btn-outline-success", style:"margin-left:1.5em" %>
+      </div>
+  </div>
+<% end %>
 </br>
 <table class="table table-striped table-bordered table-hover">
   <thead class='thead-dark'>
@@ -20,7 +29,7 @@
         <td><%= post.created_at.strftime("%B %d %Y") %></td>
         <td><%= post.tags %></td>
         <td><%= post.user.email %></td>
-        <td><%= link_to 'Show', post , class:"btn btn-dark" %></td>
+        <td><%= link_to 'Show', post , class:"btn btn-outline-dark" %></td>
       </tr>
     <% end %>
   </tbody>
