@@ -15,12 +15,12 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.name %></td>
-        <td><%= link_to 'Show', user , class:"btn btn-primary" %></td>
+        <td><%= link_to 'Show', user , class:"btn btn-outline-primary" %></td>
 
         <% if current_user %>
           <% if user.id == current_user.id %>  
-            <td><%= link_to 'Edit', edit_user_path(user) , class:"btn btn-warning" %></td>
-            <td><%= link_to 'Delete', user, method: :delete, data: { confirm: "All tuuits of #{current_user.email} will be deleted. Are you sure?" } , class:"btn btn-danger" %></td>
+            <td><%= link_to 'Edit', edit_user_path(user) , class:"btn btn-outline-success" %></td>
+            <td><%= link_to 'Delete', user, method: :delete, data: { confirm: "All tuuits of #{current_user.email} will be deleted. Are you sure?" } , class:"btn btn-outline-danger" %></td>
           <% else %>
             <td><%= link_to 'Edit', edit_user_path(user) , class:"btn btn-secondary disabled" %></td>
             <td><%= link_to 'Delete', user, method: :delete, data: { confirm: "All tuuits of #{current_user.email} will be deleted. Are you sure?" } , class:"btn btn-secondary disabled" %></td>
