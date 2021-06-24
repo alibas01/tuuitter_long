@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
   get '/posts' => 'posts#new'
   post '/posts' => 'posts#create'
+  post '/search' => 'home#search'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
