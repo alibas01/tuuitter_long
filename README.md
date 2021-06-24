@@ -1,24 +1,58 @@
-# README
+# Tuuitter - Blog v1.0
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A new perspective twitter replica. Longer posts, shorter blogs.
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+Tuuitter-Blog-v1.0 is a social media/blog app with user authentication and secure passwords. 
 
-* System dependencies
+All users are visible to others. As soon as a user profile created, tuuits can be created with a title, 100 chahracter limited tags, 1000 chahracter limited content. There are no confidential tuuits. All posts are publicly visible. Only the owners of tuuits can delete, edit posts. Also, users can change their profile information. If a user profile is deleted, all tuuits owned by that user will be deleted too. Admin can restrict users and tuuits. Search box is a simple search function for all titles, tags and users.
 
-* Configuration
+## How it works
+As stack; app built with Ruby on Rails, SQlite, Bootstrap, puma, bcrypt. A secure admin feature allows the posts and users being deleted with a dashboard feature. 
 
-* Database creation
+## Getting Started
 
-* Database initialization
+- Clone the repo. 
+- In the directory:
+```
+bundle install
 
-* How to run the test suite
+rails db:reset
+rails db:migrate
+rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+- Copy the .env-example file in the directory, and rename it to .env. Replace the info with your admin credentials.
 
-* Deployment instructions
 
-* ...
+## Dependencies
+
+- Ruby @2.6.6
+- Rails @6.1.3
+- Bootstrap @5.0.1
+- SQlite3 @1.4
+- Bcrypt
+
+
+# Screenshots
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/alibas01/tuuitter_long/main/public/main.png" width="400" height="auto" />
+</p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/alibas01/tuuitter_long/main/public/register.png" width="400" height="auto" />
+</p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/alibas01/tuuitter_long/main/public/myprofile.png" width="400" height="auto" />
+</p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/alibas01/tuuitter_long/main/public/search_results.png" width="400" height="auto" />
+</p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/alibas01/tuuitter_long/main/public/allusers.png" width="400" height="auto" />
+</p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/alibas01/tuuitter_long/main/public/allposts.png" width="400" height="auto" />
+</p>
+
