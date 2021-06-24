@@ -39,8 +39,8 @@ class HomeController < ApplicationController
       message = " #{post_count}and #{post_user}found. "
       flash.now[:notice] = message
     end
-    puts "search word= " + params[:word]
-    puts "search word= " + word
+    # puts "search word= " + params[:word]
+    # puts "search word= " + word
     #redirect_to search_path
   end
   
