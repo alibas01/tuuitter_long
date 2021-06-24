@@ -26,12 +26,11 @@
       <% form.label :tags %>
       <%= form.text_field :tags, class:"form-control", placeholder: "Tags, seperated by comas", maxlength:"100" %>
     </div>
-      <% if current_user %>
-          
+      <% if current_user %> 
           <%= form.hidden_field :user_id, value: current_user.id %>
       <% else %>
         <div id="error_explanation" class="alert alert-warning alert-dismissible fade show" role="alert">
-      <h2><%= flash[:error] = "Login or Register to write a Tuuit!"%></h2>
+          <h2><%= flash[:error] = "Login or Register to write a Tuuit!"%></h2>
         </div>
       <% end %>
     <br/>

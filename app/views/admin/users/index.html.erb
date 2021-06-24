@@ -16,7 +16,7 @@
         <td><%= user.email %></td>
         <td><%= user.name %></td>
         <td><%= link_to 'Show', user , class:"btn btn-primary" %></td>
-            <td><%= link_to 'Delete', user, method: :delete, data: { confirm: "All tuuits of #{user.email} will be deleted. Are you sure?" } , class:"btn btn-danger" %></td>
+            <td><%= button_to 'Delete', user, method: :delete, data: { confirm: "All tuuits of #{user.email} will be deleted. Are you sure?" } , class:"btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
