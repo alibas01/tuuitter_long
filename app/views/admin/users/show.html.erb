@@ -1,0 +1,19 @@
+
+<div class="jumbotron">
+  <h1 class="display-4"><u>User</u>:  <%= @user.name %> </h1>
+  <p class="lead"><%= @user.email %></p>
+  <p class="lead">Member since <%= @user.created_at.strftime("%B %d %Y") %></p>
+  <hr class="my-4">
+  <p>Total Posts: <%= get_post_count(@user.id) %></p>
+  <p>Average Length of Posts: <%= get_avg_char(@user.id) %> characters.</p>
+  <br/>
+  <p class="lead">
+
+
+    <%= link_to 'Back', admin_users_path, class:"btn btn-dark" %>
+    </br>
+    </br>
+
+  </p>
+</div>
+

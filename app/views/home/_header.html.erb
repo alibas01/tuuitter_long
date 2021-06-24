@@ -45,18 +45,24 @@
           <li class="nav-item" style="margin-right: 1.5em">
             <%= link_to "Register", register_path, class:"nav-link" %>
           </li>
-          <li class="dropdown show" style="margin-right: 1.5em; margin-left: 1em; margin-top:8px">>
+
+
+          <li class="nav-item dropdown show" style="margin-right: 1.5em; margin-left: 1em; margin-top:8px">
+
+          
           <a href="/admin" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenuLink" role="button" aria-haspopup="true" aria-expanded="false">
 
             <span class="text-danger"><%= fa_icon 'lock', text: 'Admin' %></span>
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li class="dropdown-item"><%= link_to 'Dashboard', [:admin, :root] %></li>
-            <li class="dropdown-item"><%= link_to 'Users',  [:admin, :users] %></li>
-            <li class="dropdown-item"><%= link_to 'Posts',  [:admin, :posts] %></li>
+            <%= link_to 'Dashboard', admin_root_path, class:"dropdown-item" %>
+            <%= link_to 'Users',  admin_users_path, class:"dropdown-item" %>
+            <%= link_to 'Posts',  admin_posts_path, class:"dropdown-item" %>
           </ul>
         </li>
+
+
         <% end %>
         </ul>
         <form class="d-flex">
