@@ -1,9 +1,9 @@
 <h1>TUUITTER-BLOG</h1>
-<%= form_tag search_path do %>
+<%= form_tag search_path, :method => "get", class:"form" do %>
   <div class=" d-flex justify-content-end">
 
       <div class="field ">
-        <%= text_field_tag :word, "", options = { class: 'form-control me-2', type:'search'} %>
+        <%= search_field_tag :word, "", options = { class: 'form-control me-2', type:'search'} %>
       </div>
       <div class="actions">
         <%= submit_tag "Search", class: "btn btn-outline-success", style:"margin-left:1.5em" %>

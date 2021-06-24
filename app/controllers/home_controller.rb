@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :set_word, only: %i[ result]
+  # before_action :set_word, only: %i[ result search]
 
 
   def index
@@ -11,15 +11,25 @@ class HomeController < ApplicationController
   end 
 
   # GET /home/result
-  def result
-    @posts = Post.all
-    word = params[:word]
-  end
+  # def result
+  #   @posts = Post.all
+  #   puts "search word= " + @word
+  # end
 
   # POST /home/search
   def search
-    word = params[:word]
-    redirect_to result_path
+    if params[:word].blank?  
+      redirect_to(root_path, alert: "Empty search field!") and return  
+    else  
+      word = params[:word].downcase
+      @outputs = Post.all.where("lower(title) LIKE :search OR lower(tags) LIKE :search", search: "%#{word}%").uniq
+      #@output_tags = Post.all.where("", "%#{word}%")
+      @output_users = User.joins(:posts).where("lower(users.email) LIKE ?", "%#{word}%")
+      puts @output_users.all
+    end
+    puts "search word= " + params[:word]
+    puts "search word= " + word
+    #redirect_to search_path
   end
   
   def new
@@ -27,10 +37,11 @@ class HomeController < ApplicationController
   def create
   end  
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_word
-      @word = params[:word]
-    end
+  
+  # private
+  #   # Use callbacks to share common setup or constraints between actions.
+  #   def set_word
+  #     @word = params[:word]
+  #   end
   
 end
