@@ -18,10 +18,17 @@ As stack; app built with Ruby on Rails, SQlite, Bootstrap, puma, bcrypt. A secur
 ```
 bundle install
 
-rails db:reset
 rails db:migrate
+rails db:reset
+
+yarn install
+```
+- To run the server:
+
+```
 rails s
 ```
+- Visit `http://localhost:3000/` or `http://127.0.0.1:3000`
 
 - Copy the .env-example file in the directory, and rename it to .env. Replace the info with your admin credentials.
 
@@ -56,3 +63,4 @@ rails s
 <img src="https://raw.githubusercontent.com/alibas01/tuuitter_long/main/public/allposts.png" width="400" height="auto" />
 </p>
 
+For more snapshots visit public directory.
