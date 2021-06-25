@@ -25,19 +25,19 @@ class HomeController < ApplicationController
       word = params[:word].downcase
       @outputs = Post.all.where("lower(title) LIKE :search OR lower(tags) LIKE :search", search: "%#{word}%").uniq
       #@output_tags = Post.all.where("", "%#{word}%")
-      @output_users = User.joins(:posts).where("lower(users.email) LIKE ?", "%#{word}%")
+      @output_users = User.joins(:posts).select('users.email, users.name, posts.title').where("lower(users.email) LIKE ?", "%#{word}%")
       if @outputs.count < 2
-        post_count = " #{@outputs.count} tuuit "
+        post_count = " #{@outputs.count} tuuit by 'title' or 'tags' "
       else
-        post_count = " #{@outputs.count} tuuits "
+        post_count = " #{@outputs.count} tuuits by 'title' or 'tags' "
       end
-      if @output_users.count < 2
-        post_user = "#{@output_users.count} user "
+      if @output_users.size < 2
+        post_user = "#{@output_users.size} tuuit by 'username' "
       else
-        post_user = "#{@output_users.count} users " 
+        post_user = "#{@output_users.size} tuuits by 'username' " 
       end
       message = " #{post_count}and #{post_user}found. "
-      flash.now[:notice] = message
+      flash.now[:notice] = "Results for '#{word}': #{message}"
     end
     # puts "search word= " + params[:word]
     # puts "search word= " + word
