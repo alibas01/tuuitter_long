@@ -1,6 +1,7 @@
 # Tuuitter - Blog v1.0
 
-A new perspective twitter replica. Longer posts, shorter blogs.
+A new perspective twitter replica. Longer posts, shorter blogs. 
+Deployed to:https://shrouded-tundra-39846.herokuapp.com/
 
 ## Description
 
